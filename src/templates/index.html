@@ -4,19 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="EcoSwap - Aplikasi Penukaran Sampah Online">
-  <link rel="icon" href="./favicon.png">
- 
+  <link rel="icon" href="./Logo.png">
   <title>EcoSwap</title>
+  <style>
+    .bg-main {
+      background-image: url('./background.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>EcoSwap</h1>
-    </header>
-    <main>
+<body class="bg-gray-200">
+  <header class="bg-primary p-4 flex justify-between items-center">
+    <div class="flex items-center space-x-2">
+      <img src="./Logo.png" alt="Eco Swap Logo" class="w-8 h-8">
+      <div class="text-2xl font-bold">EcoSwap</div>
+  </div>
+      <nav class="drawer hidden md:flex space-x-4">
+          <ul>
+            <li><a href="#" class="text-gray-700 px-2 md:px-1">Beranda</a></li>
+            <li><a href="#tentang" class="text-gray-700 px-2 md:px-1 ">Tentang EcoSwap</a></li>
+            <li><a href="#layanan" class="text-gray-700 px-2 md:px-1 ">Layanan Masyarakat</a></li>
+            <li><a href="#kontak" class="text-gray-700 px-2 md:px-1 ">Kontak Kami</a></li>
+            <li><a href="./login.html" class="hidden md:block bg-white text-green-600 px-3  rounded-full">Login</a></li>
+          </ul>
 
-    </main>
-    <footer>
+          <div class="menu-togle hidden flex-col h-5 justify-between relative">
+            <input type="text" class="absolute min-w-11 min-h-11 -left-1 -top-1 opacity-0 cursor-pointer z-10">
+            <span class=""></span>
+            <span class=""></span>
+            <span class=""></span>
+          </div>
+      </nav>
+      <!-- <button id="hamburger" class="block md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+      </button> -->
+  </header>
+  <!-- <div id="mobile-menu" class="hidden md:hidden">
+      <nav class="bg-primary px-2 md:px-2 pt-2 pb-3 space-y-1">
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Beranda</a>
+          <a href="#tentang" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Tentang EcoSwap</a>
+          <a href="#layanan" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Layanan Masyarakat</a>
+          <a href="#kontak" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Kontak Kami</a>
+          <a href="#login" class="block px-3 py-2 rounded-md text-base font-medium text-green-600 bg-white">Login</a>
+      </nav>
+  </div> -->
 
-    </footer>
+  <main class="text-center py-16 bg-main">
+      <h1 class="text-4xl font-bold text-white">Selamat Datang Di Ecoswap</h1>
+      <p class="text-xl mt-4 text-white">Sebuah Platform Daur Ulang Dari Rakyat Untuk Rakyat</p>
+      <button class="bg-white text-black px-4 py-2 mt-8 rounded-full">Daftar Disini</button>
+  </main>
+
+  <section id="layanan" class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 bg-white">
+      <div class="bg-primary p-8 rounded shadow text-center">
+          <h2 class="text-xl font-bold">Kenapa Memilih EcoSwap</h2>
+          <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <a href="#tentang" class="bg-white text-green-600 px-4 py-2 mt-4 rounded inline-block">Pelajari Selanjutnya</a>
+      </div>
+      <a href="#penjemputan" class="bg-primary p-8 rounded shadow">
+          <div class="flex justify-center">
+              <img src="./penjemputan-icon.png" alt="Penjemputan">
+          </div>
+          <h2 class="text-xl font-bold mt-4 text-center">Penjemputan</h2>
+      </a>
+      <a href="#pengaduan" class="bg-primary p-8 rounded shadow">
+          <div class="flex justify-center">
+              <img src="./pengaduan-icon.png" alt="Pengaduan">
+          </div>
+          <h2 class="text-xl font-bold mt-4 text-center">Pengaduan</h2>
+      </a>
+      <a href="#tukar-poin" class="bg-primary p-8 rounded shadow">
+          <div class="flex justify-center">
+              <img src="./tukar-poin-icon.png" alt="Tukar Point">
+          </div>
+          <h2 class="text-xl font-bold mt-4 text-center">Tukar Point</h2>
+      </a>
+  </section>
+  <footer class="bg-primary p-4 text-center text-green-900">
+    &copy; 2023 EcoSwap. All rights reserved.
+  </footer>
 </body>
 </html>
