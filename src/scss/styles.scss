@@ -1,0 +1,22 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.jumbotron {
+//     // background-image: url('../public/images/hero-image.jpg');
+//     // background-position: center;
+//     // background-repeat: no-repeat;
+//     // background-size: cover;
+    background-color: #ddd;
+    height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+// .container-card {
+//     top: 500px;
+//     height: 300px;
+// }
