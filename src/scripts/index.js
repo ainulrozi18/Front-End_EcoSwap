@@ -1,44 +1,24 @@
+/* eslint-disable no-use-before-define */
+import '../scss/styles.scss';
+import * as bootsrap from 'bootstrap';
 import 'regenerator-runtime';
-import '../styles/tailwind.css';
+// import App from './views/app';
+// import swRegister from './utils/sw-register';
 
-// document.getElementById('hamburger').addEventListener('click', () => {
-//   const mobileMenu = document.getElementById('mobile-menu');
-//   if (mobileMenu.classList.contains('hidden')) {
-//     mobileMenu.classList.remove('hidden');
-//   } else {
-//     mobileMenu.classList.add('hidden');
-//   }
+// const app = new App({
+//   menuToggle: document.querySelector('.menu-toggle input'),
+//   nav: document.querySelector('header nav ul'),
+//   aElements: document.querySelectorAll('header nav ul li a'),
+//   checkbox: document.querySelector('.menu-toggle input'),
+//   content: document.querySelector('main .container'),
+//   jumbotron: document.querySelector('header .jumbotron'),
 // });
-const menuToggle = document.querySelector('.menu-togle input');
-const nav = document.querySelector('header nav ul');
-const aElements = document.querySelector('header nav ul li a');
-const checkbox = document.querySelector('menu-togle input');
 
-_initialCheckbox(checkbox, false);
+// window.addEventListener('hashchange', () => {
+//   app.renderPage();
+// });
 
-menuToggle.addEventListener('click', (event) => {
-  _toggleDrawer(event, nav);
-});
-
-aElements.forEach((a) => {
-  a.addEventListener('click', (event) => {
-    _aElementsHandler(event, nav);
-    _initialCheckbox(checkbox, !checkbox.checked);
-  });
-});
-
-// eslint-disable-next-line no-shadow
-function _initialCheckbox(checkbox, status) {
-  const clonedCheckbox = checkbox;
-  clonedCheckbox.checked = status;
-}
-
-function _toggleDrawer(event, nav) {
-  event.stopPropagation();
-  nav.classList.toggle('slide');
-}
-
-function _aElementsHandler(event, nav) {
-  event.stopPropagation();
-  nav.classList.toggle('slide');
-}
+// window.addEventListener('load', () => {
+//   app.renderPage();
+//   swRegister();
+// });
