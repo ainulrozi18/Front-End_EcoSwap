@@ -12,10 +12,10 @@
 
 <body>
 
-  <header style="height: 100vh;">
+  <header>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
-      <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm px-2 fixed-top z-3">
+      <div class="container-fluid">
         <a class="navbar-brand fw-semibold fst-italic fs-4" href="#">
           <img src="./icons/Logo.png" alt="Logo" width="36" height="36" class="d-inline-block align-text-top me-1">
           EcoSwap
@@ -33,14 +33,11 @@
               <a class="nav-link fs-6 fw-semibold me-2" href="#">Tentang EcoSwap</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-6 fw-semibold me-2" href="#">Layanan Masyarakat</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link fs-6 fw-semibold me-2" href="#">Kontak Kami</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link fs-6 fw-semibold me-2 dropdown-toggle bg-light text-success rounded px-4 py-2" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link fs-6 fw-semibold me-2 dropdown-toggle bg-light text-success rounded px-4 py-2" href="#"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Login
               </a>
               <ul class="dropdown-menu">
@@ -55,19 +52,18 @@
     <!-- Navbar End -->
 
     <!-- Jumbotron Start -->
-    <section class="heading container position-relative">
+    <section class="heading container-lg position-relative">
       <div class="jumbotron">
-        <div class="container">
+        <div class="container-fluid px-3">
           <h1 class="display-4 fw-semibold">Selamat Datang Di Ecoswap</h1>
           <h2 class="display-7 fw-medium">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
           <a href="signUp.html" class="btn btn-outline-success mt-2 btn-lg">Daftar disini</a>
         </div>
       </div>
 
-      <div class="container-card container position-absolute start-50 translate-middle my-1"
-        style="top: 500px; height: 300px">
-        <div class="container-fluid h-100 d-flex flex-row align-items-center">
-          <div class="card bg-success text-white" style="width: 18rem;">
+      <div class="row justify-content-center w-full px-3 position-absolute start-0 mt-2" style="top: 69%;">
+        <div class="col-12 col-md-6 col-lg col-xl mb-3" style="min-width: 310px;">
+          <div class="card bg-success text-light w-full p-2">
             <div class="card-body">
               <h3 class="card-title fw-semibold">Kenapa memilih EcoSwap</h3>
               <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, neque quidem culpa ex
@@ -75,33 +71,36 @@
               <a href="#" class="btn btn-outline-light btn-sm">Pelajari selengkapnya</a>
             </div>
           </div>
-          <div class="menus-card flex-grow-1 ms-1" style="height: 80%;">
-            <div class="container-fluid">
-              <div class="row h-100">
-                <div class="col">
-                  <div class="card h-100 bg-success p-2" style="width: 18rem;">
-                    <img src="./icons/penjemputan-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan" style="width: 60%;">
-                    <div class="card-body text-center fw-semibold fs-3">
-                      <p class="card-text text-light">Penjemputan</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 bg-success p-2" style="width: 18rem;">
-                    <img src="./icons/pengaduan-icon.png" class="card-img-top mx-auto" alt="Icon pengaduan" style="width: 60%;">
-                    <div class="card-body text-center fw-semibold fs-3">
-                      <p class="card-text text-light">Pengaduan</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100 bg-success p-2" style="width: 18rem;">
-                    <img src="./icons/tukar-poin-icon.png" class="card-img-top mx-auto" alt="Icon tukar point" style="width: 60%;">
-                    <div class="card-body text-center fw-semibold fs-3">
-                      <p class="card-text text-light">Tukar Poin</p>
-                    </div>
-                  </div>
-                </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
+          <div class="card bg-success text-light text-center" style="min-width: 260px;">
+            <div class="card-body">
+              <img src="./icons/penjemputan-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
+                style="width: 150px;">
+              <div class="card-body text-center fw-semibold fs-3">
+                <p class="card-text text-light">Penjemputan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
+          <div class="card bg-success text-light text-center" style="min-width: 260px;">
+            <div class="card-body">
+              <img src="./icons/pengaduan-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
+                style="width: 150px;">
+              <div class="card-body text-center fw-semibold fs-3">
+                <p class="card-text text-light">Pengaduan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
+          <div class="card bg-success text-light text-center" style="min-width: 260px;">
+            <div class="card-body">
+              <img src="./icons/tukar-poin-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
+                style="width: 150px;">
+              <div class="card-body text-center fw-semibold fs-3">
+                <p class="card-text text-light">Tukar Poin</p>
               </div>
             </div>
           </div>
@@ -111,83 +110,10 @@
     <!-- Jumbotron End -->
   </header>
 
-<main>
-
-</main>
-
-  <!-- <header>
-  <nav class="drawer">
-    <div class="logo">
-      <img src="./icons/Logo.png" alt="Eco Swap Logo" class="logo__image size-8">
-      <p class="logo__text">EcoSwap</p>
-    </div>
-    <ul>
-      <li><a href="#">Beranda</a></li>
-      <li><a href="#tentang">Tentang EcoSwap</a></li>
-      <li><a href="#layanan">Layanan Masyarakat</a></li>
-      <li><a href="#kontak">Kontak Kami</a></li>
-      <li class="relative inline-block text-left dropdown">
-        <button class="bg-white text-green-600 text-base lg:text-lg font-bold px-4 py-2 lg:px-6 lg:py-2 rounded-full transition-all hover:text-green-700" id="dropdownMenuButton" aria-expanded="true" aria-haspopup="true">
-          Login
-          <svg class="w-5 h-5 ml-2 -mr-1 inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-          </svg>
-        </button>
-
-        <div class="absolute right-0 w-56 mt-2 origin-top-right bg-white border border-gray-200 divide-y divide-gray-100 rounded-md shadow-lg outline-none dropdown-menu" role="menu" aria-orientation="vertical" aria-labelledby="dropdownMenuButton" style="display: none;">
-          <div class="py-1" role="none">
-            <a href="./admin-login.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">Admin</a>
-            <a href="./user-login.html" class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100" role="menuitem">User</a>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-    <div class="menu-toggle flex md:hidden flex-col h-5 justify-between relative">
-      <input type="checkbox" class="absolute min-w-11 min-h-11 -left-1 -top-1 opacity-0 cursor-pointer z-10">
-      <span class="block w-7 h-1 bg-slate-800 rounded-sm transition duration-300 origin-top-left"></span>
-      <span class="block w-7 h-1 bg-slate-800 rounded-sm transition duration-300"></span>
-      <span class="block w-7 h-1 bg-slate-800 rounded-sm transition duration-300 origin-bottom-left"></span>
-    </div>
-  </nav>
-</header>
-
-
-  <main class="text-center py-16 bg-main">
-    <h1 class="text-4xl font-bold text-white">Selamat Datang Di Ecoswap</h1>
-    <p class="text-xl mt-4 text-white">Sebuah Platform Daur Ulang Dari Rakyat Untuk Rakyat</p>
-    <button class="bg-white text-black px-4 py-2 mt-8 rounded-full">Daftar Disini</button>
+  <main class="container-md">
+    
   </main>
-
-  <section id="layanan" class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 bg-white">
-    <div class="bg-primary p-8 rounded shadow text-center">
-      <h2 class="text-xl font-bold">Kenapa Memilih EcoSwap</h2>
-      <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.</p>
-      <a href="#tentang" class="bg-white text-green-600 px-4 py-2 mt-4 rounded inline-block">Pelajari Selanjutnya</a>
-    </div>
-    <a href="#penjemputan" class="bg-primary p-8 rounded shadow">
-      <div class="flex justify-center">
-        <img src="./icons/penjemputan-icon.png" alt="Penjemputan">
-      </div>
-      <h2 class="text-xl font-bold mt-4 text-center">Penjemputan</h2>
-    </a>
-    <a href="#pengaduan" class="bg-primary p-8 rounded shadow">
-      <div class="flex justify-center">
-        <img src="./icons/pengaduan-icon.png" alt="Pengaduan">
-      </div>
-      <h2 class="text-xl font-bold mt-4 text-center">Pengaduan</h2>
-    </a>
-    <a href="#tukar-poin" class="bg-primary p-8 rounded shadow">
-      <div class="flex justify-center">
-        <img src="./icons/tukar-poin-icon.png" alt="Tukar Point">
-      </div>
-      <h2 class="text-xl font-bold mt-4 text-center">Tukar Point</h2>
-    </a>
-  </section>
-  <footer class="bg-primary p-4 text-center text-green-900">
-    &copy; 2023 EcoSwap. All rights reserved.
-  </footer> -->
+  
 </body>
 
 </html>
