@@ -30,7 +30,10 @@
               <a class="nav-link fs-6 fw-semibold me-2 active" aria-current="page" href="#">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-6 fw-semibold me-2" href="#">Tentang EcoSwap</a>
+              <a class="nav-link fs-6 fw-semibold me-2" href="#aboutEcoSwap">Tentang EcoSwap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-6 fw-semibold me-2" href="#">Artikel</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fs-6 fw-semibold me-2" href="#">Kontak Kami</a>
@@ -52,57 +55,56 @@
     <!-- Navbar End -->
 
     <!-- Jumbotron Start -->
-    <section class="heading container-lg position-relative">
+    <section class="heading container-xxl px-3">
       <div class="jumbotron">
-        <div class="container-fluid px-3">
-          <h1 class="display-4 fw-semibold">Selamat Datang Di Ecoswap</h1>
-          <h2 class="display-7 fw-medium">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
-          <a href="signUp.html" class="btn btn-outline-success mt-2 btn-lg">Daftar disini</a>
+        <div class="container-xxl py-4">
+          <h1 class="display-4 fw-semibold text-light">Selamat Datang Di Ecoswap</h1>
+          <h2 class="display-7 fw-medium text-light">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
+          <a href="signUp.html" class="btn btn-outline-light mt-2 btn-lg rounded-pill">Daftar disini</a>
         </div>
       </div>
 
-      <div class="row justify-content-center w-full px-3 position-absolute start-0 mt-2" style="top: 69%;">
-        <div class="col-12 col-md-6 col-lg col-xl mb-3" style="min-width: 310px;">
-          <div class="card bg-success text-light w-full p-2">
+      <div class="row justify-content-center w-full mt-2">
+        <div class="col-12 col-md-6 col-lg col-xl mb-3">
+          <div class="card bg-success text-light w-full p-2" style="min-width: 310px; min-height: 250px;">
             <div class="card-body">
               <h3 class="card-title fw-semibold">Kenapa memilih EcoSwap</h3>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, neque quidem culpa ex
-                in tempora necessitatibus quae autem repudiandae eligendi quibusdam facilis ducimus</p>
-              <a href="#" class="btn btn-outline-light btn-sm">Pelajari selengkapnya</a>
+              <p class="card-text my-3">Sebuah platform daur ulang yang berbasis online berguna untuk mempermudah masyarakat dalam menyalurkan limbah rumah tangga</p>
+              <a href="#aboutEcoSwap" class="btn btn-outline-light btn-sm">Pelajari selengkapnya</a>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
-          <div class="card bg-success text-light text-center" style="min-width: 260px;">
-            <div class="card-body">
+          <div class="card bg-success text-light text-center shadow rounded-4" style="min-width: 260px; max-height: 250px;">
+            <a class="card-body" style="cursor: pointer; text-decoration: none;">
               <img src="./icons/penjemputan-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
                 style="width: 150px;">
-              <div class="card-body text-center fw-semibold fs-3">
-                <p class="card-text text-light">Penjemputan</p>
+              <div class="card-body text-center">
+                <p class="card-text text-light fw-semibold fs-4">Penjemputan</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
-          <div class="card bg-success text-light text-center" style="min-width: 260px;">
-            <div class="card-body">
+          <div class="card bg-success text-light text-center shadow rounded-4" style="min-width: 260px; max-height: 250px;">
+            <a class="card-body" style="cursor: pointer; text-decoration: none;">
               <img src="./icons/pengaduan-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
                 style="width: 150px;">
-              <div class="card-body text-center fw-semibold fs-3">
-                <p class="card-text text-light">Pengaduan</p>
+              <div class="card-body text-center">
+                <p class="card-text text-light fw-semibold fs-4">Pengaduan</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg col-xl mb-3 justify-content-center align-self-end">
-          <div class="card bg-success text-light text-center" style="min-width: 260px;">
-            <div class="card-body">
+          <div class="card bg-success text-light text-center shadow rounded-4" style="min-width: 260px; max-height: 250px;">
+            <a class="card-body" style="cursor: pointer; text-decoration: none;">
               <img src="./icons/tukar-poin-icon.png" class="card-img-top mx-auto" alt="Icon penjemputan"
                 style="width: 150px;">
-              <div class="card-body text-center fw-semibold fs-3">
-                <p class="card-text text-light">Tukar Poin</p>
+              <div class="card-body text-center">
+                <p class="card-text text-light fw-semibold fs-4">Tukar Poin</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -110,10 +112,98 @@
     <!-- Jumbotron End -->
   </header>
 
-  <main class="container-md">
-    
+  <main>
+    <div class="container-xxl px-3" style="margin-top: 2rem;">
+      <section id="aboutEcoSwap" class="w-full d-flex flex-row justify-content-evenly align-items-center px-2" style="padding-top: 4rem;">
+        <div class="image" style="width: 30%;">
+          <img src="./images/12.jpg" class="image__aboutEcoSwap img-fluid" alt="About EcoSwap">
+        </div>
+
+        <div class="description p-4" style="width: 65%;">
+          <h2 class="fw-semibold fs-1">Eco Swap</h2>
+          <p class="fw-medium fs-4">Sebuah platform daur ulang yang berbasis online berguna untuk mempermudah masyarakat dalam menyalurkan
+            limbah rumah tangga.</p>
+          <div class="description__aboutEcoSwap">
+            <div class="card text-start d-flex flex-row mb-3 px-2">
+              <img class="card-img-top mt-4" src="./icons/Goal.png" alt="Goal" style="max-width: 80px; max-height: 80px;" />
+              <div class="card-body">
+                <h3 class="card-title fw-semibold fs-5 mb-2">Tujuan Kami</h3>
+                <ul>
+                  <li>
+                    <p class="card-text">Mempermudah dalam Penyaluran Sampah: Memfasilitasi pengumpulan dan distribusi
+                      sampah daur ulang dari rumah tangga ke bank sampah.</p>
+                  </li>
+                  <li>
+                    <p class="card-text">Meningkatkan Efisiensi Pengumpulan: Mengoptimalkan rute dan jadwal penjemputan
+                      untuk mengurangi waktu dan biaya operasional.</p>
+                  </li>
+                  <li>
+                    <p class="card-text">Meningkatkan Partisipasi Masyarakat: Memotivasi lebih banyak orang untuk
+                      berpartisipasi dalam program daur ulang melalui kemudahan akses
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card text-start d-flex flex-row mb-3 px-2">
+              <img class="card-img-top mt-4" src="./icons/feature.png" alt="Feature" style="max-width: 80px; max-height: 80px;" />
+              <div class="card-body">
+                <h3 class="card-title fw-semibold fs-5 mb-2">Fitur</h3>
+                <ul>
+                  <li>
+                    <p class="card-text">Fitur Penukaran Poin Menjadi Uang.</p>
+                  </li>
+                  <li>
+                    <p class="card-text">Deskripsi: Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="card text-start d-flex flex-row mb-3 px-2">
+              <img class="card-img-top mt-4" src="./icons/benefit.png" alt="Benefit" style="max-width: 80px; max-height: 80px;" />
+              <div class="card-body">
+                <h3 class="card-title fw-semibold fs-5 mb-2">Benefit Yang Didapat</h3>
+                <ul>
+                  <li>
+                    <p class="card-text">Penghasilan Tambahan: Masyarakat dapat mendapatkan penghasilan tambahan dari poin yang dikumpulkan dan ditukar dengan uang atau hadiah.</p>
+                  </li>
+                  <li>
+                    <p class="card-text">Kemudahan Dalam Pengelolaan Sampah: Proses penjemputan sampah dari rumah membuatnya lebih mudah bagi masyarakat untuk berpartisipasi dalam program daur ulang.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="article">
+        <article class="article">
+          <h2>Artikel</h2>
+          <div class="article__content">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./images/10.jpg" class="img-fluid rounded-start" alt="..." style="max-height: 300px;">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Memahami Konsep Bank Sampah: Mengelola Sampah Menuju Lingkungan yang Bersih dan Sehat</h5>
+                    <p class="card-text">Bank sampah adalah salah satu inovasi yang telah membawa perubahan positif dalam pengelolaan sampah di banyak komunitas. Konsep bank sampah tidak hanya sekadar tempat pengumpulan sampah, tetapi juga merupakan langkah nyata menuju keberlanjutan lingkungan dan ekonomi.</p>
+                    <div class="button text-end">
+                      <a href="#" class="btn btn-outline-success mt-2 btn-sm rounded-pill">Baca selengkapnya</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
   </main>
-  
+
 </body>
 
 </html>
