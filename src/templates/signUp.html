@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icons/Logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Eco Swap</title>
+
+    <style>
+        /*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+        .border-md {
+            border-width: 2px;
+        }
+
+        /*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+        .form-control:not(select) {
+            padding: .6rem 0.5rem;
+        }
+
+        .input-group-text {
+            height: 100%;
+        }
+
+        .form-control::placeholder {
+            color: #ccc;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="position-relative">
+
+    <header>
+        <!-- Navbar Start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm px-2 fixed-top z-3">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-semibold fst-italic fs-4" href="#">
+                    <img src="./icons/Logo.png" alt="Logo" width="36" height="36"
+                        class="d-inline-block align-text-top me-1">
+                    EcoSwap
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link fs-6 fw-semibold me-2 active" aria-current="page"
+                                href="./index.html">Beranda</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fs-6 fw-semibold me-2 bg-light text-success rounded px-4 py-2"
+                                href="./login.html" role="button">
+                                Login
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    </header>
+
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row py-5 mt-4 align-items-center">
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="https://bootstrapious.com/i/snippets/sn-registeration/illustration.svg" alt=""
+                    class="img-fluid mb-3 d-none d-md-block">
+                <h1>Create your Account</h1>
+                <!-- <p class="font-italic text-muted mb-0">Create a minimal registeration page using Bootstrap 4 HTML form
+                    elements.</p>
+                <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
+                        <u>Bootstrapious</u></a>
+                </p> -->
+            </div>
+
+            <!-- Registeration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form action="#">
+                    <div class="row">
+
+                        <!-- First Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="firstName" type="text" name="firstname" placeholder="Nama Depan"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-user text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="lastName" type="text" name="lastname" placeholder="Nama Belakang"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="email" type="email" name="email" placeholder="Alamat Email"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-phone-square text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="phoneNumber" type="tel" name="phone" placeholder="Nomor Telepon"
+                                class="form-control bg-white border-md border-left-0 pl-3">
+                        </div>
+
+                        <!-- Date of birth -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calendar text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="date" class="form-control" id="date" name="date" min="1900-01-01"
+                                max="2024-06-08" value="2000-01-01">
+                            <label for="date"
+                                class="input-group-text bg-white border-md border-left-0 text-muted fw-semibold">
+                                Masukan Tanggal Lahir </label>
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="password" type="password" name="password" placeholder="Password"
+                                class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Password Confirmation -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="passwordConfirmation" type="text" name="passwordConfirmation"
+                                placeholder="Konfirmasi Password" class="form-control bg-white border-left-0 border-md">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <a href="#" class="btn btn-success btn-block py-2 w-100">
+                                <span class="font-weight-bold">Buat Akun</span>
+                            </a>
+                        </div>
+
+                        <!-- Already Registered -->
+                        <div class="text-center w-100 my-3">
+                            <p class="text-muted font-weight-bold">Sudah punya akun? <a href="./login.html"
+                                    class="text-primary ml-2">Login</a></p>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid bg-success position-absolute bottom-0 start-0">
+        <p class="text-center text-light p-3 mb-0 fw-medium fs-5 fw-medium"><span class="fst-italic">EcoSwap</span>
+            &#169;2024</p>
+    </footer>
+</body>
+
+</html>
