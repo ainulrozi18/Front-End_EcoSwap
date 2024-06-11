@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const autoprefixer = require('autoprefixer');
+const { ProvidePlugin } = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -42,12 +43,30 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.html$/,
+      //   use: ['html-loader'],
+      // },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'login.html',
+      template: path.resolve(__dirname, 'src/templates/login.html'),
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'signUp.html',
+      template: path.resolve(__dirname, 'src/templates/signUp.html'),
+    }),
+    new ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
     }),
     new CopyWebpackPlugin({
       patterns: [
