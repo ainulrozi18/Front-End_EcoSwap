@@ -1,5 +1,5 @@
 const CONFIG = {
-  BASE_URL: 'https://back-end-eco-swap-api.vercel.app/',
+  BASE_URL: 'https://back-end-eco-swap-api.vercel.app',
   // DEFAULT_LANGUAGE: 'en-us',
   // DATABASE_NAME: 'restaurant-catalogue-database',
   // DATABASE_VERSION: 1,
