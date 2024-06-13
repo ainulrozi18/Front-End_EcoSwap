@@ -26,16 +26,15 @@ class EcoSwapSource {
         password,
       };
 
-      console.log('Data yang dikirim:', data);
-
       try {
-        const response = await fetch(API_ENDPOINT.REGISTER, {
+        const options = {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),
-        });
+        };
+        const response = await fetch(API_ENDPOINT.REGISTER, options);
 
         if (!response.ok) {
           const errorData = await response.json();
@@ -68,13 +67,14 @@ class EcoSwapSource {
       };
 
       try {
-        const response = await fetch(API_ENDPOINT.LOGIN_USER, {
+        const options = {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),
-        });
+        };
+        const response = await fetch(API_ENDPOINT.LOGIN_USER, options);
 
         if (!response.ok) {
           const errorData = await response.json();
@@ -90,16 +90,17 @@ class EcoSwapSource {
 
         const responseData = await response.json();
         const { token } = responseData.data;
-
+        const { userId } = responseData.data;
         // Simpan token di local storage atau sebagai cookie
         localStorage.setItem('token', token);
+        localStorage.setItem('userId', userId);
 
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Berhasil login',
-          text: 'Please try again later.',
-          timer: 1500,
+          title: 'Berhasil login!',
+          text: 'Selamat datang kembali di EcoSwap',
+          showConfirmationButton: false,
         });
 
         // Redirect ke halaman selanjutnya (misalnya dashboard)
@@ -128,13 +129,14 @@ class EcoSwapSource {
       };
 
       try {
-        const response = await fetch(API_ENDPOINT.LOGIN_ADMIN, {
+        const options = {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(data),
-        });
+        };
+        const response = await fetch(API_ENDPOINT.LOGIN_ADMIN, options);
 
         const responseData = await response.json();
 
@@ -146,7 +148,7 @@ class EcoSwapSource {
         localStorage.setItem('token', responseData.data.token);
 
         // Redirect ke halaman admin setelah login berhasil
-        window.location.href = './index.html';
+        window.location.href = '/#/home-admin';
       } catch (error) {
         console.error('Error:', error);
         alert(error.message);
@@ -155,48 +157,32 @@ class EcoSwapSource {
   }
 
   static async logout() {
-    const token = localStorage.getItem('token');
-    const pickUpRequestLink = document.getElementById('pick-up-request');
-    const swapPointLink = document.getElementById('swap-point');
-    const historyTransactionLink = document.getElementById('history-transaction');
-
-    // Function to redirect to login page if token is not available
-
+    console.log('jalan');
     const loginLink = document.querySelector('.login-link');
     const logoutLink = document.querySelector('.logout-link');
-    // const signUpLink = document.querySelector('.signUpLink');
 
     // Cek apakah token tersimpan
-    // const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     if (token) {
       // Jika ada token, tampilkan link logout dan sembunyikan link login
       loginLink.style.display = 'none';
       logoutLink.style.display = 'block';
-    //   signUpLink.style.display = 'none';
-    //   signUpLink.style.display = 'block';
-    pickUpRequestLink.href = '/#/pick-up-request';
-      historyTransactionLink.href = '/#/history-transaction';
-      swapPointLink.href = '/#/swap-point';
     } else {
-      // Jika tidak ada token, tampilkan link login dan sembunyikan link logout
       loginLink.style.display = 'block';
       logoutLink.style.display = 'none';
-      pickUpRequestLink.href = './login.html';
-      historyTransactionLink.href = './login.html';
-      swapPointLink.href = './login.html';
     }
 
     // Event listener untuk logout
     logoutLink.addEventListener('click', async () => {
       try {
         // Lakukan request logout
-        console.log('keluar');
-        const response = await fetch(API_ENDPOINT.LOGOUT, {
+        const options = {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        });
+        };
+        const response = await fetch(API_ENDPOINT.LOGOUT, options);
 
         if (!response.ok) {
           const errorData = await response.json();
@@ -205,6 +191,7 @@ class EcoSwapSource {
 
         // Hapus token dari local storage
         localStorage.removeItem('token');
+        localStorage.removeItem('userId');
 
         // Redirect ke halaman login atau halaman lain
         window.location.href = './login.html'; // Misalnya halaman login
@@ -213,6 +200,61 @@ class EcoSwapSource {
         alert(error.message);
       }
     });
+  }
+
+  static async pickUpRequest(data) {
+    try {
+      const token = localStorage.getItem('token'); // Asumsikan token disimpan di local storage
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      };
+      const response = await fetch(API_ENDPOINT.PICKUP_REQUEST, options);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Error dari server:', errorData);
+        throw new Error('Gagal mengajukan permintaan penjemputan. Silakan coba lagi.');
+      }
+
+      const responseData = await response.json();
+      alert('Permintaan penjemputan berhasil diajukan!');
+
+      // Opsional, alihkan halaman atau kosongkan form
+      // window.location.href = './somepage.html';
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Terjadi kesalahan saat mengajukan permintaan penjemputan. Silakan coba lagi nanti.');
+    }
+  }
+
+  static async getPickupsByUserId(userId) {
+    try {
+      const token = localStorage.getItem('token'); // Asumsikan token disimpan di local storage
+      const options = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const response = await fetch(`${API_ENDPOINT.HISTORY_TRANSACTION}/${userId}`, options);
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Gagal mengambil data penjemputan.');
+      }
+
+      const responseData = await response.json();
+      return responseData.data;
+    } catch (error) {
+      console.error('Error:', error);
+      throw error;
+    }
   }
 }
 

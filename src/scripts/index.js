@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-use-before-define */
 import * as bootstrap from 'bootstrap';
@@ -11,10 +12,28 @@ import App from './views/app';
 import EcoSwapSource from './data/ecoswap-source';
 
 document.addEventListener('DOMContentLoaded', () => {
-  EcoSwapSource.registerUser();
-  EcoSwapSource.loginUser();
-  EcoSwapSource.loginAdmin();
-  EcoSwapSource.logout();
+  const currentPath = window.location.pathname;
+  console.log(currentPath);
+
+  switch (currentPath) {
+    case '/index.html':
+      EcoSwapSource.logout();
+      break;
+    case '/':
+      EcoSwapSource.logout();
+      break;
+    case '/login.html':
+      EcoSwapSource.loginUser();
+      break;
+    case '/loginAdmin.html':
+      EcoSwapSource.loginAdmin();
+      break;
+    case '/signUp.html':
+      EcoSwapSource.registerUser();
+      break;
+    default:
+      break;
+  }
 });
 
 const app = new App({
@@ -27,6 +46,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-
 //   swRegister();
 });
