@@ -5,87 +5,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="EcoSwap - Aplikasi Penukaran Sampah Online">
-  <link rel="icon" href="./Logo.png">
-  <title>EcoSwap</title>
-  <style>
-    .bg-main {
-      background-image: url('./background.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-  </style>
+  <meta name="theme-color" content="#DB0000"/>
+  <link rel="icon" href="./icons/logoEcoSwap.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+  <link rel="manifest" href="./app.webmanifest">
+  
+  <!-- Font google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <title>Eco Swap</title>
 </head>
-<body class="bg-gray-200">
-  <header class="bg-primary p-4 flex justify-between items-center">
-    <div class="flex items-center space-x-2">
-      <img src="./Logo.png" alt="Eco Swap Logo" class="w-8 h-8">
-      <div class="text-2xl font-bold">EcoSwap</div>
-  </div>
-      <nav class="drawer hidden md:flex space-x-4">
-          <ul>
-            <li><a href="#" class="text-gray-700 px-2 md:px-1">Beranda</a></li>
-            <li><a href="#tentang" class="text-gray-700 px-2 md:px-1 ">Tentang EcoSwap</a></li>
-            <li><a href="#layanan" class="text-gray-700 px-2 md:px-1 ">Layanan Masyarakat</a></li>
-            <li><a href="#kontak" class="text-gray-700 px-2 md:px-1 ">Kontak Kami</a></li>
-            <li><a href="./login.html" class="hidden md:block bg-white text-green-600 px-3  rounded-full">Login</a></li>
+
+<body>
+
+  <header>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow-sm px-2 fixed-top z-3">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-semibold fst-italic fs-4" href="#">
+          <img src="./icons/logoEcoSwap.png" alt="Logo" width="36" height="36" class="d-inline-block align-text-top me-1">
+          EcoSwap
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a id="beranda-link" class="nav-link link-opacity-100 fs-6 fw-semibold me-2 active" aria-current="page" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a id="aboutLink" class="aboutLink nav-link link-opacity-100 fs-6 fw-semibold me-2" href="#aboutEcoSwap">Tentang EcoSwap</a>
+            </li>
+            <li class="nav-item">
+              <a id="articleLink" class="nav-link link-opacity-100 fs-6 fw-semibold me-2" href="#article">Artikel</a>
+            </li>
+            <li class="nav-item">
+              <a id="contactLink" class="nav-link link-opacity-100 fs-6 fw-semibold me-2" href="#ourContact">Kontak Kami</a>
+            </li>
+            <li class="logout-link nav-item">
+              <a class="nav-link link-opacity-100 fs-6 fw-semibold me-2 bg-danger text-light rounded px-4 py-2" role="button">Keluar</a>
+            </li>
+            <button class="btn-status btn btn-danger fs-6 fw-semibold me-2 rounded px-4 py-2 text-start" type="button" disabled>
+              <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+              <span role="status">Loading...</span>
+            </button>
+            <li class="login-link nav-item dropdown">
+              <a class="nav-link fs-6 fw-semibold me-2 dropdown-toggle bg-light text-success rounded px-4 py-2" href="#"
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Masuk
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item fw-semibold" href="./loginAdmin.html">Admin</a></li>
+                <li><a class="dropdown-item fw-semibold" href="./login.html">Pengguna</a></li>
+              </ul>
+            </li>
           </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
 
-          <div class="menu-togle hidden flex-col h-5 justify-between relative">
-            <input type="text" class="absolute min-w-11 min-h-11 -left-1 -top-1 opacity-0 cursor-pointer z-10">
-            <span class=""></span>
-            <span class=""></span>
-            <span class=""></span>
-          </div>
-      </nav>
-      <!-- <button id="hamburger" class="block md:hidden focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-      </button> -->
+    
   </header>
-  <!-- <div id="mobile-menu" class="hidden md:hidden">
-      <nav class="bg-primary px-2 md:px-2 pt-2 pb-3 space-y-1">
-          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Beranda</a>
-          <a href="#tentang" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Tentang EcoSwap</a>
-          <a href="#layanan" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Layanan Masyarakat</a>
-          <a href="#kontak" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700">Kontak Kami</a>
-          <a href="#login" class="block px-3 py-2 rounded-md text-base font-medium text-green-600 bg-white">Login</a>
-      </nav>
-  </div> -->
 
-  <main class="text-center py-16 bg-main">
-      <h1 class="text-4xl font-bold text-white">Selamat Datang Di Ecoswap</h1>
-      <p class="text-xl mt-4 text-white">Sebuah Platform Daur Ulang Dari Rakyat Untuk Rakyat</p>
-      <button class="bg-white text-black px-4 py-2 mt-8 rounded-full">Daftar Disini</button>
+  <main>
+    <div id="container-content"></div>
   </main>
 
-  <section id="layanan" class="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 bg-white">
-      <div class="bg-primary p-8 rounded shadow text-center">
-          <h2 class="text-xl font-bold">Kenapa Memilih EcoSwap</h2>
-          <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <a href="#tentang" class="bg-white text-green-600 px-4 py-2 mt-4 rounded inline-block">Pelajari Selanjutnya</a>
-      </div>
-      <a href="#penjemputan" class="bg-primary p-8 rounded shadow">
-          <div class="flex justify-center">
-              <img src="./penjemputan-icon.png" alt="Penjemputan">
-          </div>
-          <h2 class="text-xl font-bold mt-4 text-center">Penjemputan</h2>
-      </a>
-      <a href="#pengaduan" class="bg-primary p-8 rounded shadow">
-          <div class="flex justify-center">
-              <img src="./pengaduan-icon.png" alt="Pengaduan">
-          </div>
-          <h2 class="text-xl font-bold mt-4 text-center">Pengaduan</h2>
-      </a>
-      <a href="#tukar-poin" class="bg-primary p-8 rounded shadow">
-          <div class="flex justify-center">
-              <img src="./tukar-poin-icon.png" alt="Tukar Point">
-          </div>
-          <h2 class="text-xl font-bold mt-4 text-center">Tukar Point</h2>
-      </a>
-  </section>
-  <footer class="bg-primary p-4 text-center text-green-900">
-    &copy; 2023 EcoSwap. All rights reserved.
+  <footer class="container-fluid w-100 bg-success">
+    <p class="text-center text-light p-3 mb-0 fw-medium fs-5 fw-medium"><span class="fst-italic">EcoSwap</span> &#169;2024</p>
   </footer>
 </body>
 
