@@ -1,50 +1,44 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-case-declarations */
-/* eslint-disable no-param-reassign */
-/* eslint-disable no-use-before-define */
-import * as bootstrap from 'bootstrap';
-import '../scss/styles.scss';
-import '../scss/responsive.scss';
 import 'regenerator-runtime';
-import $ from 'jquery';
-import App from './views/app';
+import '../styles/tailwind.css';
 
-import EcoSwapSource from './data/ecoswap-source';
+// document.getElementById('hamburger').addEventListener('click', () => {
+//   const mobileMenu = document.getElementById('mobile-menu');
+//   if (mobileMenu.classList.contains('hidden')) {
+//     mobileMenu.classList.remove('hidden');
+//   } else {
+//     mobileMenu.classList.add('hidden');
+//   }
+// });
+const menuToggle = document.querySelector('.menu-togle input');
+const nav = document.querySelector('header nav ul');
+const aElements = document.querySelector('header nav ul li a');
+const checkbox = document.querySelector('menu-togle input');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const currentPath = window.location.pathname;
+_initialCheckbox(checkbox, false);
 
-  switch (currentPath) {
-    case '/index.html':
-
-      EcoSwapSource.logout();
-      break;
-    case '/':
-      EcoSwapSource.logout();
-      break;
-    case '/login.html':
-      EcoSwapSource.loginUser();
-      break;
-    case '/loginAdmin.html':
-      EcoSwapSource.loginAdmin();
-      break;
-    case '/signUp.html':
-      EcoSwapSource.registerUser();
-      break;
-    default:
-      break;
-  }
+menuToggle.addEventListener('click', (event) => {
+  _toggleDrawer(event, nav);
 });
 
-const app = new App({
-  content: $('#container-content'),
+aElements.forEach((a) => {
+  a.addEventListener('click', (event) => {
+    _aElementsHandler(event, nav);
+    _initialCheckbox(checkbox, !checkbox.checked);
+  });
 });
 
-window.addEventListener('hashchange', () => {
-  app.renderPage();
-});
+// eslint-disable-next-line no-shadow
+function _initialCheckbox(checkbox, status) {
+  const clonedCheckbox = checkbox;
+  clonedCheckbox.checked = status;
+}
 
-window.addEventListener('load', () => {
-  app.renderPage();
-  // swRegister();
-});
+function _toggleDrawer(event, nav) {
+  event.stopPropagation();
+  nav.classList.toggle('slide');
+}
+
+function _aElementsHandler(event, nav) {
+  event.stopPropagation();
+  nav.classList.toggle('slide');
+}
