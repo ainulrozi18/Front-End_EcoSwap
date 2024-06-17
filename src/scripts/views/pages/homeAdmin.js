@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import $ from 'jquery';
 import { createHomeAdminTemplate } from '../templates/template-creator';
+import articles from '../../../public/data/article.json';
 
 const HomeAdmin = {
   async render() {
@@ -11,7 +12,7 @@ const HomeAdmin = {
 
   async afterRender() {
     const homeAdminContainer = $('.container-home-admin');
-    homeAdminContainer.append(createHomeAdminTemplate());
+    homeAdminContainer.append(createHomeAdminTemplate(articles));
     const role = localStorage.getItem('role');
     const berandaLink = document.getElementById('beranda-link');
     const aboutLink = document.querySelector('#aboutLink');

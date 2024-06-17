@@ -15,7 +15,7 @@
       {
         "id": "ljx8i0qu2uckcowlqdz",
         "name": "Manfaat Bank Sampah",
-        "picture": "../images/18.jpg",
+        "picture": "../images/11.jpg",
         "pictureWebp": "./images/webp",
         "content": {
             "pendahuluan" :"Bank sampah tidak hanya membantu mengelola sampah secara lebih efektif, tetapi juga memberikan berbagai manfaat yang signifikan bagi masyarakat dan lingkungan. Manfaat tersebut dapat dikategorikan menjadi manfaat ekonomi, lingkungan, dan sosial.",
@@ -27,18 +27,14 @@
       {
         "id": "fe8bbxoazddkcowlqdz",
         "name": "Cara Kerja dan Studi Kasus Bank Sampah di Indonesia",
-        "picture": "../images/18.jpg",
+        "picture": "../images/6.jpg",
         "pictureWebp": "./images/webp",
         "content": {
             "pendahuluan" :"Untuk memahami bagaimana bank sampah beroperasi dan memberikan manfaatnya, penting untuk mengetahui cara kerja bank sampah serta melihat contoh-contoh sukses penerapan bank sampah di berbagai daerah di Indonesia.",
             "Proses Pengumpulan Sampah" : "Proses pengumpulan sampah di bank sampah dimulai dari rumah tangga. Masyarakat diminta untuk memilah sampah mereka berdasarkan jenisnya, seperti plastik, kertas, kaca, dan logam. Sampah-sampah ini kemudian dikumpulkan dan dibawa ke bank sampah. Di bank sampah, sampah yang telah dipilah akan diproses lebih lanjut untuk menentukan nilai ekonominya.",
             "Sistem Penimbangan dan Penukaran": "Setelah sampah dikumpulkan, sampah-sampah tersebut akan ditimbang untuk menentukan nilai ekonominya. Nilai ini kemudian dicatat dalam buku tabungan atau sistem digital yang dimiliki oleh bank sampah. Masyarakat bisa menukarkan tabungan mereka dengan uang atau barang. Sistem ini mirip dengan sistem perbankan konvensional, di mana sampah yang disetor akan mendapatkan 'saldo' yang bisa ditukar.",
             "Pengolahan dan Daur Ulang": "Sampah yang telah dikumpulkan di bank sampah kemudian akan diproses lebih lanjut. Sampah yang dapat didaur ulang akan dijual ke pabrik daur ulang, sedangkan sampah yang tidak dapat didaur ulang akan dikelola dengan cara lain, seperti pembuatan kompos. Proses ini tidak hanya membantu mengurangi jumlah sampah, tetapi juga memberikan nilai tambah melalui produk daur ulang.",
-            "Studi Kasus Bank Sampah di Indonesia" : {
-                "Bank Sampah Malang (BSM)": "Bank Sampah Malang (BSM) adalah salah satu bank sampah yang sukses di Indonesia. BSM telah berhasil mengelola sampah dari ribuan rumah tangga dan memberikan manfaat ekonomi yang signifikan bagi masyarakat Malang. BSM juga bekerja sama dengan berbagai pihak untuk meningkatkan kesadaran dan partisipasi masyarakat dalam pengelolaan sampah.",
-                "Bank Sampah Surabaya": "Di Surabaya, bank sampah juga telah berkembang pesat. Pemerintah kota Surabaya bekerja sama dengan berbagai komunitas untuk mendirikan bank sampah di setiap kelurahan. Hal ini telah membantu mengurangi jumlah sampah yang dibuang ke TPA secara signifikan. Selain itu, bank sampah di Surabaya juga aktif dalam berbagai kegiatan edukasi dan sosialisasi.",
-                "Bank Sampah di Jakarta": "Jakarta, sebagai ibu kota Indonesia, juga memiliki banyak bank sampah yang tersebar di berbagai wilayah. Pemerintah DKI Jakarta mendukung penuh keberadaan bank sampah dan bekerja sama dengan berbagai organisasi untuk mengelola sampah secara lebih efektif. Bank sampah di Jakarta tidak hanya fokus pada pengumpulan sampah, tetapi juga pada inovasi dalam pengelolaan dan daur ulang sampah."
-            }
+            "Studi Kasus Bank Sampah di Indonesia" : "Bank Sampah Malang (BSM) adalah salah satu bank sampah yang sukses di Indonesia. BSM telah berhasil mengelola sampah dari ribuan rumah tangga dan memberikan manfaat ekonomi yang signifikan bagi masyarakat Malang. BSM juga bekerja sama dengan berbagai pihak untuk meningkatkan kesadaran dan partisipasi masyarakat dalam pengelolaan sampah.Di Surabaya, bank sampah juga telah berkembang pesat. Pemerintah kota Surabaya bekerja sama dengan berbagai komunitas untuk mendirikan bank sampah di setiap kelurahan. Hal ini telah membantu mengurangi jumlah sampah yang dibuang ke TPA secara signifikan. Selain itu, bank sampah di Surabaya juga aktif dalam berbagai kegiatan edukasi dan sosialisasi. Jakarta, sebagai ibu kota Indonesia, juga memiliki banyak bank sampah yang tersebar di berbagai wilayah. Pemerintah DKI Jakarta mendukung penuh keberadaan bank sampah dan bekerja sama dengan berbagai organisasi untuk mengelola sampah secara lebih efektif. Bank sampah di Jakarta tidak hanya fokus pada pengumpulan sampah, tetapi juga pada inovasi dalam pengelolaan dan daur ulang sampah."
         }
       }
     ]

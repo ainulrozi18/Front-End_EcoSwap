@@ -125,7 +125,7 @@ const createHomeTemplate = (articles) => `
 
   <section id="article" class="px-2" style="margin-top: 4rem;">
   <article class="article">
-    <h2 class="fw-semibold fs-2">Artikel</h2>
+    <h2 class="fw-semibold fs-1 text-center mb-5">Artikel</h2>
     <div class="article__content mt-3">
       ${articles.articles.map((article) => `
         <div class="card mb-3 p-3">
@@ -183,13 +183,14 @@ const createHomeTemplate = (articles) => `
     </div>
   </section>
 `;
-const createHomeAdminTemplate = () => `
+const createHomeAdminTemplate = (articles) => `
 <!-- Jumbotron Start -->
 <section class="heading">
   <div class="jumbotron">
     <div class="jumbotron__text container-xxl py-4">
       <h1 class="display-4 fw-semibold text-light">Selamat Datang Di Ecoswap</h1>
       <h2 class="display-7 fw-medium text-light">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
+      <a href="./signUp.html" class="signUpLink btn btn-outline-light mt-2 btn-lg rounded-pill invisible">Daftar disini</a>
     </div>
   </div>
 
@@ -294,50 +295,26 @@ const createHomeAdminTemplate = () => `
   </section>
 
   <section id="article__admin" class="px-2" style="margin-top: 4rem;">
-    <article class="article">
-      <h2 class="fw-semibold fs-2">Artikel</h2>
-      <div class="article__content mt-3">
-        <div class="card mb-3 p-3">
-          <div class="row g-0">
-            <div class="col-md-4 text-center">
-              <img src="./images/18.jpg" class="img-fluid rounded object-position-center object-fit-cover" alt="..." style="height: 250px; min-height: 200px;">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title fw-semibold fs-5">Memahami Konsep Bank Sampah: Mengelola Sampah Menuju Lingkungan yang Bersih dan Sehat</h5>
-                <p class="card-text mt-4">Bank sampah adalah salah satu inovasi yang telah membawa perubahan positif dalam pengelolaan sampah di banyak komunitas. Konsep bank sampah tidak hanya sekadar tempat pengumpulan sampah, tetapi juga merupakan langkah nyata menuju keberlanjutan lingkungan dan ekonomi.<a href="#" class="btn btn-outline-success mt-0 btn-sm rounded-pill">Baca selengkapnya</a></p>
-              </div>
-            </div>
+  <article class="article">
+  <h2 class="fw-semibold fs-1  text-center mb-5">Artikel</h2>
+  <div class="article__content mt-3">
+    ${articles.articles.map((article) => `
+      <div class="card mb-3 p-3">
+        <div class="row g-0">
+          <div class="col-md-4 text-center">
+            <img src="${article.picture}" class="img-fluid rounded object-position-center object-fit-cover" alt="..." style="height: 250px; min-height: 200px;">
           </div>
-        </div>
-        <div class="card mb-3 p-3">
-          <div class="row g-0">
-            <div class="col-md-4 text-center">
-              <img src="./images/18.jpg" class="img-fluid rounded object-position-center object-fit-cover" alt="..." style="height: 250px; min-height: 200px;">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title fw-semibold fs-5">Memahami Konsep Bank Sampah: Mengelola Sampah Menuju Lingkungan yang Bersih dan Sehat</h5>
-                <p class="card-text mt-4">Bank sampah adalah salah satu inovasi yang telah membawa perubahan positif dalam pengelolaan sampah di banyak komunitas. Konsep bank sampah tidak hanya sekadar tempat pengumpulan sampah, tetapi juga merupakan langkah nyata menuju keberlanjutan lingkungan dan ekonomi.<a href="#" class="btn btn-outline-success mt-0 btn-sm rounded-pill">Baca selengkapnya</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3 p-3">
-          <div class="row g-0">
-            <div class="col-md-4 text-center">
-              <img src="./images/18.jpg" class="img-fluid rounded object-position-center object-fit-cover" alt="..." style="height: 250px; min-height: 200px;">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title fw-semibold fs-5">Memahami Konsep Bank Sampah: Mengelola Sampah Menuju Lingkungan yang Bersih dan Sehat</h5>
-                <p class="card-text mt-4">Bank sampah adalah salah satu inovasi yang telah membawa perubahan positif dalam pengelolaan sampah di banyak komunitas. Konsep bank sampah tidak hanya sekadar tempat pengumpulan sampah, tetapi juga merupakan langkah nyata menuju keberlanjutan lingkungan dan ekonomi.<a href="#" class="btn btn-outline-success mt-0 btn-sm rounded-pill">Baca selengkapnya</a></p>
-              </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold fs-5">${article.name}</h5>
+              <p class="card-text mt-4">${article.content.pendahuluan}<a href="#/detail-article/${article.id}" class="btn btn-outline-success mt-0 btn-sm rounded-pill">Baca selengkapnya</a></p>
             </div>
           </div>
         </div>
       </div>
-    </article>
+    `).join('')}
+  </div>
+</article>
   </section>
 
   <section id="ourContact__admin" class="px-2" style="margin-top: 4rem;">
@@ -607,13 +584,15 @@ const createDetailWithdrawalTemplate = (withdrawal) => `
 `;
 
 const createDetailArticleTemplate = (article) => `
-  <div class="article-container">
-    <article>
-      <h1>${article.name}</h1>
-      <img src="${article.picture}" alt="${article.name}" class="img-fluid rounded">
+  <div class="article-container py-3 px-3 mx-auto">
+    <article class="mt-3 pt-3 mx-auto text-center shadow px-4 py-2" style="width: 800px; max-width: 100%">
+      <h1 class="mt-5 text-center fw-semibold">${article.name}</h1>
+      <div class="w-100 my-4">
+        <img src="${article.picture}" alt="${article.name}" class="img-fluid rounded object-fit-cover" >
+      </div>
       ${Object.keys(article.content).map((key) => `
-        <h2>${key}</h2>
-        <p>${article.content[key]}</p>
+        <h2 class="mt-5 text-start">${key}</h2>
+        <p class="my-4 text-start" style="text-indent: 25px;">${article.content[key]}</p>
       `).join('')}
     </article>
   </div>
