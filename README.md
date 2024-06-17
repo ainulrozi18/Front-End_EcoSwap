@@ -29,26 +29,25 @@ Pengembangan aplikasi web EcoSwap merupakan salah satu upaya inovatif untuk meng
 
 ### Langkah-langkah Instalasi
 
-Clone repositori ini:
-   sh
+1. Clone repositori ini:
+  ```sh
    git clone https://github.com/ainulrozi18/Front-End_EcoSwap.git
-   
-Masuk ke direktori proyek
-   sh
+   ```
+2. Masuk ke direktori proyek
+  ```sh
    cd Front-End_EcoSwap
-   
-Instal dependensi:
-   sh
+   ```
+3. Instal dependensi:
+   ```sh
    npm install
-   
-Jalankan aplikasi:
-   sh
+   ```
+4. Jalankan aplikasi:
+   ```sh
    npm run start-dev
-   
-Buka proyek di browser
-   sh
+   ```
+5. Buka proyek di browser
+   ```sh
    http://localhost:9090
-
 
 ## 👨‍💻 Pengembang
 
