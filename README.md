@@ -38,16 +38,22 @@ Pengembangan aplikasi web EcoSwap merupakan salah satu upaya inovatif untuk meng
    cd Front-End_EcoSwap
    ```
 3. Instal dependensi:
+   
    ```sh
    npm install
    ```
+   
 4. Jalankan aplikasi:
+
    ```sh
    npm run start-dev
    ```
-5. Buka proyek di browser
+
+6. Buka proyek di browser
+
    ```sh
    http://localhost:9090
+
 
 ## 👨‍💻 Pengembang
 
