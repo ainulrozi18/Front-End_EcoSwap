@@ -2,12 +2,12 @@ const createHomeTemplate = (articles) => `
 <!-- Jumbotron Start -->
 <section class="heading">
   <div class="jumbotron">
-    <div class="profil-user-container container-xxl py-3">
+    <div class="profil-user-container container-xxl mb-1">
     
     </div>
-    <div class="jumbotron__text container-xxl py-4">
-      <h1 class="display-4 fw-semibold text-light">Selamat Datang Di Ecoswap</h1>
-      <h2 class="display-7 fw-medium text-light">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
+    <div class="jumbotron__text container-xxl py-2">
+      <h1 class="fs-1 display-3 fw-semibold text-light">Selamat Datang Di Ecoswap</h1>
+      <h2 class="fs-3 fw-medium text-light">Sebuah Platfrom Daur Ulang Dari Rakyat Untuk Rakyat</h2>
       <a href="./signUp.html" class="signUpLink btn btn-outline-light mt-2 btn-lg rounded-pill">Daftar disini</a>
     </div>
   </div>
@@ -148,7 +148,7 @@ const createHomeTemplate = (articles) => `
 
   <section id="ourContact" class="px-2" style="margin-top: 4rem;">
     <div class="contact">
-      <h2 class="contact__heading text-center fw-semibold fs-2">Kontak Kami</h2>
+      <h2 class="contact__heading text-center fw-semibold fs-2 mb-5">Kontak Kami</h2>
 
       <div class="contact__content text-center mt-3">
         <p>Jika anda punya kepentingan atau pertanyaan silahkan hubungi kontak dibawah atau bisa datang langsung ke lokasi dibawah ini.</p>
@@ -319,7 +319,7 @@ const createHomeAdminTemplate = (articles) => `
 
   <section id="ourContact__admin" class="px-2" style="margin-top: 4rem;">
     <div class="contact">
-      <h2 class="contact__heading text-center fw-semibold fs-2">Kontak Kami</h2>
+      <h2 class="contact__heading text-center fw-semibold fs-2 mb-5">Kontak Kami</h2>
 
       <div class="contact__content text-center mt-3">
         <p>Jika anda punya kepentingan atau pertanyaan silahkan hubungi kontak dibawah atau bisa datang langsung ke lokasi dibawah ini.</p>
@@ -599,10 +599,20 @@ const createDetailArticleTemplate = (article) => `
 `;
 
 const createProfilUserTemplate = (username, totalPoint) => `
-    <div class="text-light pt-2">
-      <p class="fw-semibold fs-3 mt-4">${username}</p>
-      <p class="fw-semibold fs-4 mt-0">Total Point : ${totalPoint}</p>
+    <div class="text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; ">
+      <p class="fs-5">Informasi Akun : </p>
+      <p class="fw-medium fs-3 mt-4">${username}</p>
+      <p class="fw-medium fs-4 mt-2">Total Point : ${totalPoint} Pts</p>
     </div>
+`;
+
+const createLoadingTemplate = () => `
+  <div class="text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1 d-flex justify-content-center align-items-center" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; height: 145px;">
+  <div class="">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  </div>
 `;
 
 export {
@@ -619,4 +629,5 @@ export {
   createListWithdrawalTemplate,
   createDetailWithdrawalTemplate,
   createProfilUserTemplate,
+  createLoadingTemplate,
 };

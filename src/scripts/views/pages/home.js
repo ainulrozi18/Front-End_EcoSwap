@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-undef */
 import $ from 'jquery';
-import { createHomeTemplate, createProfilUserTemplate } from '../templates/template-creator';
+import { createHomeTemplate, createLoadingTemplate, createProfilUserTemplate } from '../templates/template-creator';
 import articles from '../../../public/data/article.json';
 import EcoSwapSource from '../../data/ecoswap-source';
 
@@ -15,7 +15,7 @@ const Home = {
   async afterRender() {
     const homeContainer = $('.container-home');
     homeContainer.append(createHomeTemplate(articles));
-    const jumbotron = $('.profil-user-container');
+    const profilUserContainer = $('.profil-user-container');
     const signUpLink = $('.signUpLink');
     const role = localStorage.getItem('role');
     const token = localStorage.getItem('token');
@@ -51,7 +51,11 @@ const Home = {
       const userPoints = await EcoSwapSource.getUserPoints(userId);
 
       signUpLink.css('visibility', 'hidden');
-      jumbotron.append(createProfilUserTemplate(userInfo.username, userPoints || 0));
+      profilUserContainer.append(createLoadingTemplate());
+      setTimeout(() => {
+        // profilUserContainer.remove(createLoadingTemplate());
+        profilUserContainer.append(createProfilUserTemplate(userInfo.username, userPoints || 0));
+      }, 1500);
     }
   },
 };
