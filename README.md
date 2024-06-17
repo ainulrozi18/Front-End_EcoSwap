@@ -1,7 +1,7 @@
 # Capstone Project - EcoSwap
 
 <p align="center">
-  <img src="public/icons/logoEcoSwap.png" alt="Logo" width="150px">
+  <img src="src/public/icons/logoEcoSwap.png" alt="Logo" width="150px">
 </p>
 
 ## 🌱 Gambaran Proyek
@@ -29,23 +29,23 @@ Pengembangan aplikasi web EcoSwap merupakan salah satu upaya inovatif untuk meng
 
 ### Langkah-langkah Instalasi
 
-1. Clone repositori ini:
+Clone repositori ini:
    sh
    git clone https://github.com/ainulrozi18/Front-End_EcoSwap.git
    
-2. Masuk ke direktori proyek
+Masuk ke direktori proyek
    sh
    cd Front-End_EcoSwap
    
-3. Instal dependensi:
+Instal dependensi:
    sh
    npm install
    
-4. Jalankan aplikasi:
+Jalankan aplikasi:
    sh
    npm run start-dev
    
-5. Buka proyek di browser
+Buka proyek di browser
    sh
    http://localhost:9090
 
