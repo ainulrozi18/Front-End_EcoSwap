@@ -17,7 +17,7 @@ const createHomeTemplate = (articles) => `
       <div class="card bg-success text-light w-full p-2" style="min-width: 310px; min-height: 250px;">
         <div class="card-body">
           <h3 class="card-title fw-semibold">Kenapa memilih EcoSwap</h3>
-          <p class="card-text my-3">Sebuah platform daur ulang yang berbasis online berguna untuk mempermudah masyarakat dalam menyalurkan limbah rumah tangga</p>
+          <p class="card-text my-3 ">Sebuah platform daur ulang yang berbasis online berguna untuk mempermudah masyarakat dalam menyalurkan limbah rumah tangga</p>
           <a href="#aboutEcoSwap" class="btn btn-outline-light btn-sm">Pelajari selengkapnya</a>
         </div>
       </div>
@@ -379,14 +379,14 @@ const createPickUpRequestTemplate = () => `
       <label for="description" class="fw-semibold">Deskripsi Alamat Penjemputan</label>
     </div>
     <div class="form-footer my-3 text-center">
-      <button type="submit" class="btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Ajukan Penjemputan</button>
+      <button type="submit" class="btn-pickup-request btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Ajukan Penjemputan</button>
+      <button class="btn-status-pickup-request btn btn-success rounded py-2 w-100 border-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+          <span role="status">Loading...</span>
+      </button>
     </div>
   </form>
 </div>
-`;
-
-const createAfterPickUpRequestTemplate = () => `
-
 `;
 
 const createSwapPointTemplate = () => `
@@ -412,8 +412,12 @@ const createSwapPointTemplate = () => `
       <input type="number" class="form-control rounded text-center border-none" id="amount" placeholder="Nominal Penarikan" required>
     </div>
     <div class="form-footer my-3 text-center">
-      <span class="d-block mb-3">Minimal Penarikan: Rp.25.000</span>
-      <button type="submit" class="btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Ajukan Penarikan</button>
+      <span class="d-block mb-3">Minimal Penarikan: 25.000 point</span>
+      <button type="submit" class="btn-swap-point btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Ajukan Penarikan</button>
+      <button class="btn-status-swap-point btn btn-success rounded py-2 w-100 border-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+          <span role="status">Loading...</span>
+      </button>
     </div>
   </form>
 </div>
@@ -435,13 +439,22 @@ const createHistoryTransactionTemplate = () => `
 
 const createTransactionCardTemplate = (transaction, index) => {
   const formattedDate = formatDate(transaction.created_at);
+  let transactionText = '';
+
+  if (transaction.status === 'pending') {
+    transactionText = `<span class="fw-semibold me-2">${index}.</span> ${formattedDate} Mengajukan penjemputan sampah`;
+  } else {
+    transactionText = `<span class="fw-semibold me-2">${index}.</span> ${formattedDate} Mengumpulkan sampah dengan berat ${transaction.weight || 0} Kg memperoleh point sebesar ${transaction.points || 0} point`;
+  }
+
   return `
-    <div class="transaction__card card py-2 mb-3 shadow">
-      <div class="card-body">
-        <p class="fs-6 fs-md-5 fw-medium my-auto">${index}. ${formattedDate} mengumpulkan sampah dengan berat ${transaction.weight || 0} Kg memperoleh point sebesar ${transaction.points || 0} point <span class="ms-5 bg-warning px-3 py-1">${transaction.status}</span></p>
+    <div class="transaction__card card py-2 mb-3 shadow-sm">
+      <div class="card-body d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+        <p id="transaction-text" class="fs-6 fs-md-5 fw-medium my-auto">${transactionText}</p>
+        <span id="transaction-status" class="bg-warning px-4 py-2">${transaction.status}</span>
       </div>
     </div>
-`;
+  `;
 };
 
 const createListPickupTemplate = (pickups) => `
@@ -475,7 +488,10 @@ const createListPickupTemplate = (pickups) => `
 `;
 
 const createDetailPickupTemplate = (pickup) => `
-<div class="custom-form p-4 shadow rounded p-5" style="width: 580px; min-width: 400px;">
+<div class="custom-form shadow rounded p-5 position-relative" style="width: 580px; min-width: 400px;">
+  <a href="#/list-pickup" class="position-absolute" style="top: 1.5rem; left: 1.5rem;">
+    <img src="./icons/back.png" alt="Icon kembali" style="width: 2rem"; height: 2rem;/>
+  </a>
   <h1 class="text-center fw-semibold fs-3 mb-4">Detail Penjemputan</h1>
   <div class="form-header my-3 rounded text-center text-light py-2 bg-success">
     Data Penjemputan Pelanggan
@@ -511,7 +527,11 @@ const createDetailPickupTemplate = (pickup) => `
         <label for="point" class="fw-semibold">Point</label>
       </div>
       <div class="form-footer my-3 text-center">
-        <button type="submit" class="btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Konfirmasi Penjemputan</button>
+        <button type="submit" class="btn-detail-pickup btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Konfirmasi Penjemputan</button>
+        <button class="btn-status-detail-pickup btn btn-success rounded py-2 w-100 border-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+          <span role="status">Loading...</span>
+        </button>
       </div>
     </form>
   </div>
@@ -548,7 +568,10 @@ const createListWithdrawalTemplate = (withdrawals) => `
 `;
 
 const createDetailWithdrawalTemplate = (withdrawal) => `
-<div class="custom-form p-4 shadow rounded p-5" style="width: 580px; min-width: 400px;">
+<div class="custom-form p-4 shadow rounded p-5 position-relative" style="width: 580px; min-width: 400px;">
+  <a href="#/list-withdrawal" class="position-absolute" style="top: 1.5rem; left: 1.5rem;">
+    <img src="./icons/back.png" alt="Icon kembali" style="width: 2rem"; height: 2rem;/>
+  </a>
   <h1 class="text-center fw-semibold fs-3 mb-4">Detail Penarikan</h1>
   <div class="form-header my-3 rounded text-center text-light py-2 bg-success">
     Data Penarikan Pelanggan
@@ -576,7 +599,11 @@ const createDetailWithdrawalTemplate = (withdrawal) => `
         <label for="amount" class="fw-semibold">Penarikan</label>
       </div>
       <div class="form-footer my-3 text-center">
-        <button type="submit" class="btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Konfirmasi Penarikan</button>
+        <button type="submit" class="btn-withdrawal btn btn-submit rounded text-light py-2 w-100 border-none bg-success">Konfirmasi Penarikan</button>
+        <button class="btn-status-withdrawal btn btn-success rounded py-2 w-100 border-none" type="button" disabled>
+          <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+          <span role="status">Loading...</span>
+        </button>
       </div>
     </form>
   </div>
@@ -601,14 +628,13 @@ const createDetailArticleTemplate = (article) => `
 const createProfilUserTemplate = (username, totalPoint) => `
     <div class="text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; ">
       <p class="fs-5">Informasi Akun : </p>
-      <p class="fw-medium fs-3 mt-4">${username}</p>
-      <p class="fw-medium fs-4 mt-2">Total Point : ${totalPoint} Pts</p>
+      <p class="fw-medium fs-4 mt-4">${username}</p>
+      <p class="fw-medium fs-5 mt-2">Total Point : ${totalPoint} Pts</p>
     </div>
 `;
 
 const createLoadingTemplate = () => `
-  <div class="text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1 d-flex justify-content-center align-items-center" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; height: 145px;">
-  <div class="">
+  <div class="container-spinner text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1 d-flex justify-content-center align-items-center" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; height: 145px;">
   <div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
@@ -621,7 +647,6 @@ export {
   createSwapPointTemplate,
   createHistoryTransactionTemplate,
   createDetailArticleTemplate,
-  createAfterPickUpRequestTemplate,
   createTransactionCardTemplate,
   createHomeAdminTemplate,
   createListPickupTemplate,
@@ -630,4 +655,5 @@ export {
   createDetailWithdrawalTemplate,
   createProfilUserTemplate,
   createLoadingTemplate,
+  formatDate,
 };

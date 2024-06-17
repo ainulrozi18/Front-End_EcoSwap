@@ -6,7 +6,7 @@ import API_ENDPOINT from '../../globals/api-endpoint';
 const DetailPickup = {
   async render() {
     return `
-      <div class="container-detail-pickup container-xxl px-3 d-flex justify-content-center align-items-center' style="height: 100vh"></div>
+      <div class="container-detail-pickup container-xxl px-3 d-flex justify-content-center align-items-center mt-5 mb-3" style="min-height: 100vh;"></div>
     `;
   },
 
@@ -22,8 +22,24 @@ const DetailPickup = {
       if (response.status === 200 && result.status === 'success') {
         detailContainer.append(createDetailPickupTemplate(result.data));
 
+        const submitButton = $('.btn-detail-pickup');
+        const statusButton = $('.btn-status-detail-pickup');
+        statusButton.css('display', 'none');
+
+        if (result.data.status === "approved") {
+          submitButton.prop('disabled', true);
+          $('#typeTrash').prop('disabled', true);
+          $('#weightOfTrash').prop('disabled', true);
+          $('#point').prop('disabled', true);
+          submitButton.text('Penjemputan sudah dikonfirmasi');
+        }
+  
         $('#approve-pickup-form').on('submit', async (event) => {
           event.preventDefault();
+
+          submitButton.css('display', 'none');
+          statusButton.css('display', 'block');
+
           const wasteType = $('#typeTrash').val().toString();
           const weight = parseFloat($('#weightOfTrash').val());
           const points = parseInt($('#point').val(), 10);
@@ -48,22 +64,45 @@ const DetailPickup = {
             const approveResult = await approveResponse.json();
 
             if (approveResponse.status === 200 && approveResult.status === 'success') {
-              alert('Permintaan penjemputan berhasil disetujui');
-              // Opsi tambahan, seperti redirect atau update UI
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Permintaan penjemputan berhasil disetujui!',
+                text: `Berhasil menyetujui penjemputan atas nama ${result.data.name}`,
+                showConfirmButton: false,
+              });
+              submitButton.css('display', 'block');
+              statusButton.css('display', 'none');
+
+              setTimeout(() => {
+                window.location.href = '#/list-pickup';
+              }, 1500);
             } else {
-              alert('Gagal menyetujui permintaan penjemputan');
+              Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: `Gagal menyetujui permintaan penjemputan!`,
+                text: 'Terjadi kesalahan saat menyetujui penjemputan. Silakan coba lagi nanti.',
+              });
+              submitButton.css('display', 'block');
+              statusButton.css('display', 'none');
             }
           } catch (error) {
-            console.error('Error approving pickup request:', error);
-            alert('Error approving pickup request');
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: `Gagal menyetujui permintaan penjemputan!`,
+              text: 'Terjadi kesalahan saat menyetujui penjemputan. Silakan coba lagi nanti.',
+            });
+            submitButton.css('display', 'block');
+            statusButton.css('display', 'none');
           }
         });
       } else {
         detailContainer.append('<p>Gagal memuat data</p>');
       }
     } catch (error) {
-      console.error('Error fetching data:', error);
-      detailContainer.append('<p>Error fetching data</p>');
+      detailContainer.append('<p>Gagal mengambil data</p>');
     }
   },
 };

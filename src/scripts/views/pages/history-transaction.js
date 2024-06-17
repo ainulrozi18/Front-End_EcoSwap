@@ -16,16 +16,25 @@ const HistoryTransaction = {
     homeContainer.append(createHistoryTransactionTemplate());
 
     try {
-      const userId = localStorage.getItem('userId'); // Asumsikan userId disimpan di local storage
+      const userId = localStorage.getItem('userId');
       const transactions = await EcoSwapSource.getPickupsByUserId(userId);
 
       const transactionListContainer = homeContainer.find('.transaction__list');
       transactions.forEach((transaction, index) => {
         transactionListContainer.append(createTransactionCardTemplate(transaction, index + 1));
+        
+        if (transaction.status === 'approved') {
+          $(`#transaction-status`).removeClass('bg-warning').addClass('bg-success text-light fst-italic');
+        }
       });
+
     } catch (error) {
-      console.error('Error:', error);
-      alert('Gagal mengambil data transaksi. Silakan coba lagi nanti.');
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: `${error.message}`,
+        text: 'Gagal mengambil data transaksi. Silakan coba lagi nanti.',
+      });
     }
   },
 };

@@ -15,6 +15,9 @@ const Home = {
   async afterRender() {
     const homeContainer = $('.container-home');
     homeContainer.append(createHomeTemplate(articles));
+    const jumbotron = $('.jumbotron');
+    const jumbotronH1 = $('.jumbotron h1');
+    const jumbotronH2 = $('.jumbotron h2');
     const profilUserContainer = $('.profil-user-container');
     const signUpLink = $('.signUpLink');
     const role = localStorage.getItem('role');
@@ -28,6 +31,11 @@ const Home = {
     // Memeriksa apakah token ada
     if (!token) {
       // Mengubah href masing-masing elemen <a> ke '#'
+      jumbotron.addClass('py-4');
+      jumbotronH1.removeClass('fs-1');
+      jumbotronH1.addClass('display-4');
+      jumbotronH2.removeClass('fs-3');
+      jumbotronH2.addClass('display-7');
       if (swapPoint) {
         swapPoint.addEventListener('click', () => {
           swapPoint.href = './login.html';
@@ -53,7 +61,7 @@ const Home = {
       signUpLink.css('visibility', 'hidden');
       profilUserContainer.append(createLoadingTemplate());
       setTimeout(() => {
-        // profilUserContainer.remove(createLoadingTemplate());
+        // containerSpinner.addClass('d-none');
         profilUserContainer.append(createProfilUserTemplate(userInfo.username, userPoints || 0));
       }, 1500);
     }

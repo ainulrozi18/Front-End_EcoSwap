@@ -94,7 +94,7 @@
                             </div>
                             <div class="form-floating">
                                 <input id="firstName" type="text" name="firstname" placeholder="Nama Depan"
-                                    class="form-control bg-white border-left-0 border-md" required>
+                                    class="form-control bg-white border-left-0 border-md" required max="10">
                                 <label for="firstname">Nama Depan</label>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-floating">
                                 <input id="lastName" type="text" name="lastname" placeholder="Nama Belakang"
-                                    class="form-control bg-white border-left-0 border-md" required>
+                                    class="form-control bg-white border-left-0 border-md" required max="10">
                                 <label for="lastname">Nama Belakang</label>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                             </div>
                             <div class="form-floating">
                                 <input id="password" type="password" name="password" placeholder="Password"
-                                    class="form-control bg-white border-left-0 border-md" required>
+                                    class="form-control bg-white border-left-0 border-md" required min="6">
                                 <label for="password">Password</label>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                             <button type="submit" class="btn-register btn btn-success btn-block py-2 w-100 font-weight-bold">
                                 Buat Akun
                             </button>
-                            <button class="btn-status btn btn-success mb-3" type="button" disabled>
+                            <button class="btn-status btn btn-success py-2 w-100 font-weight-bold" type="button" disabled>
                                 <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
                                 <span role="status">Loading...</span>
                               </button>

@@ -10,13 +10,18 @@ import $ from 'jquery';
 import App from './views/app';
 
 import EcoSwapSource from './data/ecoswap-source';
+const role = localStorage.getItem('role');
 
 document.addEventListener('DOMContentLoaded', () => {
   const currentPath = window.location.pathname;
-
+  if (role === 'user') {
+    window.location.href = '/#';
+  }
+  if (role === 'admin') {
+  window.location.href = '/#/home-admin';
+  }
   switch (currentPath) {
     case '/index.html':
-
       EcoSwapSource.logout();
       break;
     case '/':

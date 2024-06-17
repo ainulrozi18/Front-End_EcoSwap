@@ -71,7 +71,11 @@ class EcoSwapSource {
           icon: 'success',
           title: 'Berhasil Daftar!',
           text: 'Silahkan login pada halaman login',
+          showConfirmButton: false,
         });
+        setTimeout(() => {
+          window.location.href = './login.html';
+        }, 2500);
       } catch (error) {
         console.error('Error:', error);
         Swal.fire({
@@ -133,10 +137,9 @@ class EcoSwapSource {
             position: 'center',
             icon: 'error',
             title: `${errorData.message}`,
-            text: 'Email atau Password salah!',
+            text: 'Email atau password salah',
           });
 
-          // Revert button display states on error
           statusButton.css('display', 'none');
           loginButton.css('display', 'block');
           return;
@@ -146,7 +149,6 @@ class EcoSwapSource {
         const { token } = responseData.data;
         const { userId } = responseData.data;
 
-        // Simpan token di local storage atau sebagai cookie
         localStorage.setItem('token', token);
         localStorage.setItem('userId', userId);
         localStorage.setItem('role', 'user');
@@ -160,7 +162,6 @@ class EcoSwapSource {
           timer: 1500,
         });
 
-        // Redirect ke halaman selanjutnya (misalnya dashboard)
         setTimeout(() => {
           window.location.href = './index.html';
         }, 1500);
@@ -170,7 +171,7 @@ class EcoSwapSource {
           position: 'center',
           icon: 'error',
           title: `${error.message}`,
-          text: 'Email atau Password salah!',
+          text: 'SIlahkan coba lagi nanti!',
         });
         // Revert button display states on error
         statusButton.css('display', 'none');
@@ -322,7 +323,7 @@ class EcoSwapSource {
 
   static async pickUpRequest(data) {
     try {
-      const token = localStorage.getItem('token'); // Asumsikan token disimpan di local storage
+      const token = localStorage.getItem('token');
       const options = {
         method: 'POST',
         headers: {
@@ -336,17 +337,11 @@ class EcoSwapSource {
       if (!response.ok) {
         const errorData = await response.json();
         console.error('Error dari server:', errorData);
-        throw new Error('Gagal mengajukan permintaan penjemputan. Silakan coba lagi.');
       }
 
       const responseData = await response.json();
-      alert('Permintaan penjemputan berhasil diajukan!');
-
-      // Opsional, alihkan halaman atau kosongkan form
-      // window.location.href = './somepage.html';
     } catch (error) {
       console.error('Error:', error);
-      alert('Terjadi kesalahan saat mengajukan permintaan penjemputan. Silakan coba lagi nanti.');
     }
   }
 
@@ -393,7 +388,7 @@ class EcoSwapSource {
     try {
       const response = await fetch(`${API_ENDPOINT.USER_POINT}/${userId}`);
       if (!response.ok) {
-        // throw new Error('Gagal mengambil poin pengguna');
+        throw new Error('Gagal mengambil poin pengguna');
       }
       const data = await response.json();
       return data.data.total_points;

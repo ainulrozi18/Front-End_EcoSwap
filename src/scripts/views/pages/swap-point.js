@@ -17,20 +17,22 @@ const SwapPoint = {
     const pickUpContainer = $('.container-swap-point');
     pickUpContainer.append(createSwapPointTemplate());
 
+    const submitButton = $('.btn-swap-point');
+    const statusButton = $('.btn-status-swap-point');
+
+    statusButton.css('display', 'none');
     const withdrawalRequestForm = document.getElementById('withdrawalRequestForm');
     withdrawalRequestForm.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      submitButton.css('display', 'none');
+      statusButton.css('display', 'block');
 
       const name = document.getElementById('name').value.toString();
       const email = document.getElementById('email').value.toString();
       const phone = document.getElementById('phone').value.toString();
       const ewallet = document.getElementById('ewallet').value.toString();
       const amount = parseInt(document.getElementById('amount').value, 10);
-
-      if (amount < 25000) {
-        alert('Nominal penarikan minimal adalah Rp.25.000');
-        return;
-      }
 
       const data = {
         name,
@@ -41,7 +43,7 @@ const SwapPoint = {
       };
 
       try {
-        const token = localStorage.getItem('token'); // Asumsikan token disimpan di local storage
+        const token = localStorage.getItem('token');
         const response = await fetch(`${API_ENDPOINT.WITHDRAWALS}`, {
           method: 'POST',
           headers: {
@@ -53,18 +55,37 @@ const SwapPoint = {
 
         if (!response.ok) {
           const errorData = await response.json();
-          console.error('Error dari server:', errorData);
-          throw new Error('Gagal mengajukan permintaan penarikan. Silakan coba lagi.');
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Gagal melakukan penarikan!',
+            text: 'Point kamu belum cukup. Nominal penarikan minimal adalah 25.000 point',
+          });
+          submitButton.css('display', 'block');
+          statusButton.css('display', 'none');
+          return;
         }
 
         const responseData = await response.json();
-        alert('Permintaan penarikan berhasil diajukan!');
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Permintaan penarikan berhasil diajukan!',
+          text: 'Harap menunggu hingga admin menyetujui penarikanmu!',
+        });
+        submitButton.css('display', 'block');
+        statusButton.css('display', 'none');
 
-        // Opsional, alihkan halaman atau kosongkan form
         withdrawalRequestForm.reset();
       } catch (error) {
-        console.error('Error:', error);
-        alert('Terjadi kesalahan saat mengajukan permintaan penarikan. Silakan coba lagi nanti.');
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: `${error.message}`,
+          text: 'Terjadi kesalahan saat mengajukan permintaan penarikan. Silakan coba lagi nanti.',
+        });
+        submitButton.css('display', 'block');
+        statusButton.css('display', 'none');
       }
     });
   },
