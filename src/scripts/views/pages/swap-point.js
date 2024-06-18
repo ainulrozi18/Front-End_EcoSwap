@@ -69,7 +69,7 @@ const SwapPoint = {
         const responseData = await response.json();
         Swal.fire({
           position: 'center',
-          icon: 'error',
+          icon: 'success',
           title: 'Permintaan penarikan berhasil diajukan!',
           text: 'Harap menunggu hingga admin menyetujui penarikanmu!',
         });

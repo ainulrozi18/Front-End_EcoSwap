@@ -75,15 +75,15 @@ const createHomeTemplate = (articles) => `
             <h3 class="card-title fw-semibold fs-5 mb-2">Tujuan Kami</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Mempermudah dalam Penyaluran Sampah: Memfasilitasi pengumpulan dan distribusi
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Mempermudah dalam Penyaluran Sampah: </span>Memfasilitasi pengumpulan dan distribusi
                   sampah daur ulang dari rumah tangga ke bank sampah.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Meningkatkan Efisiensi Pengumpulan: Mengoptimalkan rute dan jadwal penjemputan
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Meningkatkan Efisiensi Pengumpulan: </span>Mengoptimalkan rute dan jadwal penjemputan
                   untuk mengurangi waktu dan biaya operasional.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Meningkatkan Partisipasi Masyarakat: Memotivasi lebih banyak orang untuk
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Meningkatkan Partisipasi Masyarakat: </span>Memotivasi lebih banyak orang untuk
                   berpartisipasi dalam program daur ulang melalui kemudahan akses
                 </p>
               </li>
@@ -96,16 +96,14 @@ const createHomeTemplate = (articles) => `
             <h3 class="card-title fw-semibold fs-5 mb-2">Fitur</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Fitur Penukaran Poin Menjadi Uang.</p>
+                <p class="card-text mt-2 "><span class="fw-medium text-success-emphasis">Penukaran Poin Menjadi Uang: </span>
+                Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang.
+                </p>
               </li>
               <li>
-                <p class="card-text mt-2">Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
-              </li>
-              <li>
-                <p class="card-text mt-2">Fitur Penjemputan Sampah.</p>
-              </li>
-              <li>
-                <p class="card-text mt-2">Pengguna dapat mengatur jadwal penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.</p>
+              <p class="card-text mt-2 "><span class="fw-medium text-success-emphasis">Penjemputan Sampah: </span>
+              Pengguna dapat mengajukan penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.
+              </p>
               </li>
             </ul>
           </div>
@@ -116,10 +114,10 @@ const createHomeTemplate = (articles) => `
             <h3 class="card-title fw-semibold fs-5 mb-2">Benefit Yang Didapat</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Penghasilan Tambahan: Masyarakat dapat mendapatkan penghasilan tambahan dari poin yang dikumpulkan dan ditukar dengan uang atau hadiah.</p>
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Penghasilan Tambahan: </span>Masyarakat dapat mendapatkan penghasilan tambahan dari poin yang dikumpulkan dan ditukar dengan uang atau hadiah.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Kemudahan Dalam Pengelolaan Sampah: Proses penjemputan sampah dari rumah membuatnya lebih mudah bagi masyarakat untuk berpartisipasi dalam program daur ulang.</p>
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Kemudahan Dalam Pengelolaan Sampah: </span>Proses penjemputan sampah dari rumah membuatnya lebih mudah bagi masyarakat untuk berpartisipasi dalam program daur ulang.</p>
               </li>
             </ul>
           </div>
@@ -167,9 +165,9 @@ const createHomeTemplate = (articles) => `
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
-            <a href="https://instagram.com/EcoSwap" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
+            <a href="https://instagram.com/ecoswap" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
             <img src="./icons/instagram.png" width="40px" height="40px" alt="Instagram">
-            @EcoSwap
+            @ecoswap
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
@@ -179,9 +177,9 @@ const createHomeTemplate = (articles) => `
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
-            <a href="https://gmail.com" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
+            <a href="https://gmail.com/" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
             <img src="./icons/gmail.png" width="40px" height="40px" alt="Email">
-            EcoSwap@gmail.com
+            ecoswap@gmail.com
             </a>
           </div>
         </div>
@@ -241,26 +239,22 @@ const createHomeAdminTemplate = (articles) => `
       <img src="./images/12.jpg" class="image__aboutEcoSwap img-fluid" alt="About EcoSwap">
     </div>
 
-    <div class="description p-4">
-      <h3 class="fw-semibold fs-1">Eco Swap</h3>
-      <p class="fw-medium fs-4">Sebuah platform daur ulang yang berbasis online berguna untuk mempermudah masyarakat dalam menyalurkan
-        limbah rumah tangga.</p>
-      <div class="description__aboutEcoSwap">
+    <div class="description__aboutEcoSwap">
         <div class="card text-start d-flex flex-column flex-sm-row align-items-center align-items-sm-start mb-3 px-2">
           <img class="card-img-top mt-4" src="./icons/Goal.png" alt="Goal" style="max-width: 80px; max-height: 80px;" />
           <div class="card-body">
             <h3 class="card-title fw-semibold fs-5 mb-2">Tujuan Kami</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Mempermudah dalam Penyaluran Sampah: Memfasilitasi pengumpulan dan distribusi
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Mempermudah dalam Penyaluran Sampah: </span>Memfasilitasi pengumpulan dan distribusi
                   sampah daur ulang dari rumah tangga ke bank sampah.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Meningkatkan Efisiensi Pengumpulan: Mengoptimalkan rute dan jadwal penjemputan
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Meningkatkan Efisiensi Pengumpulan: </span>Mengoptimalkan rute dan jadwal penjemputan
                   untuk mengurangi waktu dan biaya operasional.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Meningkatkan Partisipasi Masyarakat: Memotivasi lebih banyak orang untuk
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Meningkatkan Partisipasi Masyarakat: </span>Memotivasi lebih banyak orang untuk
                   berpartisipasi dalam program daur ulang melalui kemudahan akses
                 </p>
               </li>
@@ -273,16 +267,14 @@ const createHomeAdminTemplate = (articles) => `
             <h3 class="card-title fw-semibold fs-5 mb-2">Fitur</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Fitur Penukaran Poin Menjadi Uang.</p>
+                <p class="card-text mt-2 "><span class="fw-medium text-success-emphasis">Penukaran Poin Menjadi Uang: </span>
+                Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang.
+                </p>
               </li>
               <li>
-                <p class="card-text mt-2">Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
-              </li>
-              <li>
-                <p class="card-text mt-2">Fitur Penjemputan Sampah.</p>
-              </li>
-              <li>
-                <p class="card-text mt-2">Pengguna dapat mengatur jadwal penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.</p>
+              <p class="card-text mt-2 "><span class="fw-medium text-success-emphasis">Penjemputan Sampah: </span>
+              Pengguna dapat mengajukan penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.
+              </p>
               </li>
             </ul>
           </div>
@@ -293,15 +285,14 @@ const createHomeAdminTemplate = (articles) => `
             <h3 class="card-title fw-semibold fs-5 mb-2">Benefit Yang Didapat</h3>
             <ul>
               <li>
-                <p class="card-text mt-2">Penghasilan Tambahan: Masyarakat dapat mendapatkan penghasilan tambahan dari poin yang dikumpulkan dan ditukar dengan uang atau hadiah.</p>
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Penghasilan Tambahan: </span>Masyarakat dapat mendapatkan penghasilan tambahan dari poin yang dikumpulkan dan ditukar dengan uang atau hadiah.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Kemudahan Dalam Pengelolaan Sampah: Proses penjemputan sampah dari rumah membuatnya lebih mudah bagi masyarakat untuk berpartisipasi dalam program daur ulang.</p>
+                <p class="card-text mt-2"><span class="fw-medium text-success-emphasis">Kemudahan Dalam Pengelolaan Sampah: </span>Proses penjemputan sampah dari rumah membuatnya lebih mudah bagi masyarakat untuk berpartisipasi dalam program daur ulang.</p>
               </li>
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -344,9 +335,9 @@ const createHomeAdminTemplate = (articles) => `
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
-            <a href="https://instagram.com/EcoSwap" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
+            <a href="https://instagram.com/ecoswap" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
             <img src="./icons/instagram.png" width="40px" height="40px" alt="Instagram">
-            @EcoSwap
+            @ecoswap
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
@@ -356,9 +347,9 @@ const createHomeAdminTemplate = (articles) => `
             </a>
           </div>
           <div class="col-12 col-sm-6 col-xxl py-2">
-            <a href="https://gmail.com" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
+            <a href="https://gmail.com/" target="_blank" class="text-black text-decoration-none fs-5 fw-medium p-3 mx-2">
             <img src="./icons/gmail.png" width="40px" height="40px" alt="Email">
-            EcoSwap@gmail.com
+            ecoswap@gmail.com
             </a>
           </div>
         </div>
@@ -452,18 +443,21 @@ const createHistoryTransactionTemplate = () => `
 const createTransactionCardTemplate = (transaction, index) => {
   const formattedDate = formatDate(transaction.created_at);
   let transactionText = '';
+  let transactionStatus = '';
 
   if (transaction.status === 'pending') {
     transactionText = `<span class="fw-semibold me-2">${index}.</span> ${formattedDate} Mengajukan penjemputan sampah`;
+    transactionStatus = 'bg-warning';
   } else {
     transactionText = `<span class="fw-semibold me-2">${index}.</span> ${formattedDate} Mengumpulkan sampah dengan berat ${transaction.weight || 0} Kg memperoleh point sebesar ${transaction.points || 0} point`;
+    transactionStatus = 'bg-success text-light fst-italic';
   }
 
   return `
     <div class="transaction__card card py-2 mb-3 shadow-sm">
       <div class="card-body d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
         <p id="transaction-text" class="fs-6 fs-md-5 fw-medium my-auto">${transactionText}</p>
-        <span id="transaction-status" class="bg-warning px-4 py-2">${transaction.status}</span>
+        <span id="transaction-status" class="${transactionStatus} px-4 py-2">${transaction.status}</span>
       </div>
     </div>
   `;
@@ -641,7 +635,7 @@ const createProfilUserTemplate = (username, totalPoint) => `
     <div class="text-light rounded px-3 py-2 mt-5 mb-0 shadow-sm lh-1" style="background: rgba(0,0, 0, 0.3); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); min-width: 250px; width: 350px; ">
       <p class="fs-5">Informasi Akun : </p>
       <p class="fw-medium fs-4 mt-4">${username}</p>
-      <p class="fw-medium fs-5 mt-2">Total Point : ${totalPoint} Pts</p>
+      <p class="fw-medium fs-5 mt-2">Total Point : ${totalPoint} Point</p>
     </div>
 `;
 

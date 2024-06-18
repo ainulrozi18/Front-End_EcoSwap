@@ -23,9 +23,6 @@ const HistoryTransaction = {
       transactions.forEach((transaction, index) => {
         transactionListContainer.append(createTransactionCardTemplate(transaction, index + 1));
         
-        if (transaction.status === 'approved') {
-          $(`#transaction-status`).removeClass('bg-warning').addClass('bg-success text-light fst-italic');
-        }
       });
 
     } catch (error) {
