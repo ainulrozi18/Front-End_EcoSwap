@@ -4,7 +4,6 @@
 /* eslint-disable no-use-before-define */
 import * as bootstrap from 'bootstrap';
 import '../scss/styles.scss';
-import '../scss/responsive.scss';
 import 'regenerator-runtime';
 import $ from 'jquery';
 import App from './views/app';

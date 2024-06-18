@@ -99,7 +99,13 @@ const createHomeTemplate = (articles) => `
                 <p class="card-text mt-2">Fitur Penukaran Poin Menjadi Uang.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Deskripsi: Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
+                <p class="card-text mt-2">Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
+              </li>
+              <li>
+                <p class="card-text mt-2">Fitur Penjemputan Sampah.</p>
+              </li>
+              <li>
+                <p class="card-text mt-2">Pengguna dapat mengatur jadwal penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.</p>
               </li>
             </ul>
           </div>
@@ -270,7 +276,13 @@ const createHomeAdminTemplate = (articles) => `
                 <p class="card-text mt-2">Fitur Penukaran Poin Menjadi Uang.</p>
               </li>
               <li>
-                <p class="card-text mt-2">Deskripsi: Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
+                <p class="card-text mt-2">Pengguna dapat mengumpulkan poin setiap kali mereka menyerahkan sampah daur ulang melalui aplikasi. Poin ini bisa ditukarkan dengan uang atau hadiah lainnya.</p>
+              </li>
+              <li>
+                <p class="card-text mt-2">Fitur Penjemputan Sampah.</p>
+              </li>
+              <li>
+                <p class="card-text mt-2">Pengguna dapat mengatur jadwal penjemputan sampah daur ulang langsung dari rumah mereka melalui aplikasi. Aplikasi akan mengatur rute dan jadwal penjemputan yang efisien untuk tim pengumpul sampah.</p>
               </li>
             </ul>
           </div>
